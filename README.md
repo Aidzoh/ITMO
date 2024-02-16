@@ -1,2 +1,2 @@
 # MyTerminal
-Terminal thingies
+Directories from my terminal
