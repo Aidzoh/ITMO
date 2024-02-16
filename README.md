@@ -1,2 +1,1 @@
-# MyTerminal
-Directories from my terminal
+# Workspace
