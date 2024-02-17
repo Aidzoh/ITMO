@@ -4,9 +4,9 @@
 Проект расположен в папке **proj** и запускается через терминал из этой папки. 
 
 Команды для запуска:
-- Для Windows -- battle
-- Для Unix -- ./battle.sh
-- Универсально -- java -jar Battle.jar
+- Для Windows &mdash; battle
+- Для Unix &mdash; ./battle.sh
+- Универсально &mdash; java -jar Battle.jar
 
 Документация расположена в папке проекта **doc**. Её также можно открыть в папке **proj** с помощью файла "doc.html".
 
