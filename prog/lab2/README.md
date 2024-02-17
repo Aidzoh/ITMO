@@ -7,3 +7,5 @@
 - Для Windows - battle
 - Для Unix - ./battle.sh
 - Универсально - java -jar Battle.jar
+
+Документация расположена в папке doc. Её также можно открыть в папке proj с помощью файла "doc.html".
