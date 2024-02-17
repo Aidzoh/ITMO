@@ -1,0 +1,2 @@
+Main-Class: ru.ifmo.se.aidzoh.battle.PokemonBattle
+Class-Path: classes/Pokemon.jar
