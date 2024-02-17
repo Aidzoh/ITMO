@@ -6,4 +6,4 @@
 Команды для запуска:
 - Для Windows - battle
 - Для Unix - ./battle.sh
-- Универсально - java - jar Battle.jar
+- Универсально - java -jar Battle.jar
