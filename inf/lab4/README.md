@@ -1,5 +1,4 @@
 # Лабораторная работа 4 по информатике
-
 Вариант &mdash; 27
 
-<br>yaml &xrarr; json
+yaml &xrarr; json
