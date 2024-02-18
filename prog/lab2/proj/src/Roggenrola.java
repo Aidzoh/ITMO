@@ -1,6 +1,7 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
 
 /**<p>Покемон: Роггенрола.
  * <br>Предок: -
@@ -18,7 +19,7 @@ import ru.ifmo.se.pokemon.*;
  * <br>&emsp;&emsp;-- <a href="Swagger.html">Щегольство</a>
  * </p>
  */
-public class Roggenrola extends Pokemon{
+public class Roggenrola extends Pokemon {
 
 
         private void init() {

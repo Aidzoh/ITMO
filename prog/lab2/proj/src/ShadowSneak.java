@@ -1,6 +1,8 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.Type;
+
 
 /**
  * <p>Ход: Теневой удар.

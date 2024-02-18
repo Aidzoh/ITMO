@@ -1,6 +1,9 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.StatusMove;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.Effect;
 
 /**
  * <p>Ход: Отдых.
@@ -21,8 +24,10 @@ public class Rest extends StatusMove {
         @Override
         protected void applySelfEffects(Pokemon p) {
 
-                p.restore();
                 Effect e = new Effect();
+
+                p.restore();
+
                 e.sleep(p);
 
         }

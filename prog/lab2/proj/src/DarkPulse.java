@@ -1,6 +1,9 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.SpecialMove;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.Effect;
 
 /**
  * <p>Ход: Тёмный пульс.
@@ -24,6 +27,7 @@ public class DarkPulse extends SpecialMove {
         protected void applyOppEffects(Pokemon p) {
 
                 Effect e = new Effect().chance(0.2);
+
                 e.flinch(p);
 
         }

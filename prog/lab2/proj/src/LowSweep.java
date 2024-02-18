@@ -1,6 +1,10 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.Stat;
+
 
 /**
  * <p>Ход: Удар в ноги.

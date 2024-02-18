@@ -1,6 +1,10 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.PhysicalMove;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.Stat;
+
 import java.util.Random;
 
 /**
@@ -18,12 +22,19 @@ public class CrossChop extends PhysicalMove {
         protected String describe() {
 
                 return "used Cross Chop";
+
         }
 
         @Override
         protected double calcCriticalHit(Pokemon att, Pokemon def) {
-                boolean val = new Random().nextInt(512)<=(att.getStat(Stat.SPEED)-def.getStat(Stat.SPEED))*3;
+                
+                boolean val = new Random().nextInt(512)
+                                           <= (att.getStat(Stat.SPEED)
+                                              -def.getStat(Stat.SPEED))*3;
+
+
                 return 1 + (val ? 1 : 0);
+
         }
 
         public CrossChop() {
@@ -31,4 +42,5 @@ public class CrossChop extends PhysicalMove {
                 super(Type.FIGHTING, 100, 80);
 
         }
+
 }

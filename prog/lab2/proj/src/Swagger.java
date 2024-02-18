@@ -1,6 +1,11 @@
 package ru.ifmo.se.aidzoh.battle;
 
-import ru.ifmo.se.pokemon.*;
+import ru.ifmo.se.pokemon.StatusMove;
+import ru.ifmo.se.pokemon.Pokemon;
+import ru.ifmo.se.pokemon.Type;
+import ru.ifmo.se.pokemon.Stat;
+import ru.ifmo.se.pokemon.Effect;
+
 
 /**
  * <p>Ход: Щегольство.
@@ -23,7 +28,9 @@ public class Swagger extends StatusMove {
         protected void applyOppEffects(Pokemon p) {
 
                 Effect e = new Effect();
+
                 e.confuse(p);
+
                 p.setMod(Stat.ATTACK, 2);
 
         }
