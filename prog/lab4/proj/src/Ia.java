@@ -1,6 +1,8 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public class Piglet extends RobinGroup {
+public class Ia extends RobinGroup {
+
+        Location location = Location.GROVE;
 
         @Override
         public int hashCode() {
@@ -33,17 +35,17 @@ public class Piglet extends RobinGroup {
       
         public void run(Location where) {
                 
-                System.out.println("*Пятачок мчится*");
+                System.out.println("*Иа мчится*");
 
                 this.location = where;
 
-                System.out.println("Текущяя локация Пятачка - " + this.getLocation());
+                System.out.println("Текущяя локация Иа - " + this.getLocation());
 
         }
 
         public void listen(StoryType t) {
 
-                System.out.print("*Глаза Пятачка становятся ");
+                System.out.print("*Глаза Иа становятся ");
 
                 switch (t) {
 
@@ -75,8 +77,12 @@ public class Piglet extends RobinGroup {
 
         }
 
-        public void sayPhrase() {}
+        public void sayPhrase() {
+                
+                System.out.println("- Как раз тут");
 
-        public Piglet() {}
+        }
+
+        public Ia() {}
 
 }
