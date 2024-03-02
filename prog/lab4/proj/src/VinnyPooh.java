@@ -1,6 +1,6 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public class VinnyPooh extends RobinGroup {
+class VinnyPooh extends Friends {
 
 
         @Override
@@ -17,7 +17,7 @@ public class VinnyPooh extends RobinGroup {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                RobinGroup that = (RobinGroup) o;
+                Friends that = (Friends) o;
 
                 return this.location == that.location;
 
@@ -31,55 +31,40 @@ public class VinnyPooh extends RobinGroup {
                                 + '}';
         }
 
-        public void run(Location where) {
+        public void run(Location where, Singing.SingSong s) {
                 
-                System.out.println("*Винни мчится*");
+                s.currentlyRunning = true;
 
                 this.location = where;
 
-                System.out.println("Текущяя локация Винни - " + this.getLocation());
+                System.out.println("*Винни мчится*\n"
+                                 + "Текущяя локация Винни - " + this.getLocation());
 
                 System.out.println("*Винни издает приветственные возгласы*");
 
         }
 
-        public void listen(StoryType t) {
+        public void listen(StoryType t, Singing.SingSong s) {
+
+                s.currentlyListening = true;
 
                 System.out.print("*Глаза Винни становятся ");
 
-                switch (t) {
+                this.eyeSize += t.getValue();
 
-                        case SAD:
-                                this.eyeSize += 10;
-                                System.out.println("больше*");
-                                break;
-
-                        case INTERESTING:
-                                this.eyeSize += 5;
-                                System.out.println("больше*");
-                                break;
-
-                        case BORING:
-                                if (this.eyeSize >= 5) {
-                                        this.eyeSize -= 5;
-                                        System.out.println("меньше*");
-                                }
-                                break;
-
-                        case FUNNY:
-                                if (this.eyeSize >= 10) {
-                                        this.eyeSize -= 10;
-                                        System.out.println("меньше*");
-                                }
-                                break;
-
-                }
+                System.out.println( t.getValue() >= 0 ? "больше*" : "меньше*" );
 
         }
 
-        public void sayPhrase() {
-                
-                System.out.println("– Где, ты говоришь, он был?");
+        public void stopRunning(Singing.SingSong s) {
+
+                s.currentlyRunning = false;
+
+        }
+
+        public void stopListening(Singing.SingSong s) {
+
+                s.currentlyListening = false;
 
         }
 

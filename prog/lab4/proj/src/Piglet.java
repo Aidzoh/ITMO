@@ -1,6 +1,6 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public class Piglet extends RobinGroup {
+class Piglet extends Friends {
 
         @Override
         public int hashCode() {
@@ -16,7 +16,7 @@ public class Piglet extends RobinGroup {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                RobinGroup that = (RobinGroup) o;
+                Friends that = (Friends) o;
 
                 return this.location == that.location;
 
@@ -27,56 +27,44 @@ public class Piglet extends RobinGroup {
         public String toString() {
                 return "Piglet{"
                                 + "eyeSize=" + this.eyeSize
-                                + ", location" + this.getLocation()
+                                + ", location=" + this.getLocation()
                                 + '}';
         }
       
-        public void run(Location where) {
+        public void run(Location where, Singing.SingSong s) {
                 
-                System.out.println("*Пятачок мчится*");
+                s.currentlyRunning = true;
 
                 this.location = where;
 
-                System.out.println("Текущяя локация Пятачка - " + this.getLocation());
+                System.out.println("*Пятачок мчится*\n"
+                                + "Текущяя локация Пятачка - " + this.getLocation());
 
         }
 
-        public void listen(StoryType t) {
+        public void listen(StoryType t, Singing.SingSong s) {
+
+                s.currentlyListening = true;
 
                 System.out.print("*Глаза Пятачка становятся ");
 
-                switch (t) {
+                this.eyeSize += t.getValue();
 
-                        case SAD:
-                                this.eyeSize += 10;
-                                System.out.println("больше*");
-                                break;
-
-                        case INTERESTING:
-                                this.eyeSize += 5;
-                                System.out.println("больше*");
-                                break;
-
-                        case BORING:
-                                if (this.eyeSize >= 5) {
-                                        this.eyeSize -= 5;
-                                        System.out.println("меньше*");
-                                }
-                                break;
-
-                        case FUNNY:
-                                if (this.eyeSize >= 10) {
-                                        this.eyeSize -= 10;
-                                        System.out.println("меньше*");
-                                }
-                                break;
-
-                }
+                System.out.println( t.getValue() >= 0 ? "больше*" : "меньше*" );
 
         }
 
-        public void sayPhrase() {}
+        public void stopRunning(Singing.SingSong s) {
 
+                s.currentlyRunning = false;
+
+        }
+
+        public void stopListening(Singing.SingSong s) {
+
+                s.currentlyListening = false;
+
+        }
         public Piglet() {}
 
 }

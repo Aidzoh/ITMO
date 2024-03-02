@@ -1,7 +1,9 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public interface canRun {
+interface canRun {
 
-        public void run(Location where);
+        public void run(Location where, Singing.SingSong s);
+
+        public void stopRunning(Singing.SingSong s);
         
 }

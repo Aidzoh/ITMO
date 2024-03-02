@@ -1,35 +1,36 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public class Pooh {
+
+class Pooh {
 
         public static void main(String[] args) {
-
+                
                 VinnyPooh vin = new VinnyPooh();
                 Piglet pig = new Piglet();
                 ChristopherRobin rob = new ChristopherRobin();
-                Ia ia = new Ia();
+                Singing sng = new Singing(); 
+                Singing.SingSong song = sng.new SingSong();
+                Friends[] frnds = {vin, pig, rob};
 
-                vin.run(Location.EDGE);
-                pig.run(Location.EDGE);
-                rob.run(Location.EDGE);
+                song.sing();
 
-                vin.run(Location.GROVE);
-                pig.run(Location.GROVE);
-                rob.run(Location.GROVE);
+                for (int i = 0; i < frnds.length; i++) { frnds[i].run(Location.EDGE, song); }
 
-                for(int i = 0; i < 10; i++) {
-                        
-                        rob.tellStory(StoryType.SAD, pig);
-                        rob.tellStory(StoryType.SAD, vin);
+                for (int i = 0; i < frnds.length; i++) { frnds[i].run(Location.GROVE, song); }
+
+                song.sing();
+
+                for (int i = 0; i < 10; i++) {
+
+                        rob.tellStory(StoryType.SAD, song, vin, pig);
 
                 }
 
-                System.out.println("Глаза Винни в " + vin.eyeSize + "% больше прежнего");
-                System.out.println("Глаза Пятачка в " + pig.eyeSize + "% больше прежнего");
+                System.out.println("Глаза Винни в " + vin.eyeSize + "% больше прежнего\n"
+                                 + "Глаза Пятачка в " + pig.eyeSize + "% больше прежнего");
 
-                vin.sayPhrase();
-                ia.sayPhrase();
 
         }
+
 
 }

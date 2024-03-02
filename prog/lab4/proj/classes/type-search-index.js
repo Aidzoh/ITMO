@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.ifmo.se.aidzoh.pooh","l":"ListeningException"},{"p":"ru.ifmo.se.aidzoh.pooh","l":"RunningException"},{"p":"ru.ifmo.se.aidzoh.pooh","l":"Singing"}];updateSearchResults();

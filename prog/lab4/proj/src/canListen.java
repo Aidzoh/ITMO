@@ -1,7 +1,9 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public interface canListen {
+interface canListen {
 
-        public void listen(StoryType s);
+        public void listen(StoryType t, Singing.SingSong s);
+
+        public void stopListening(Singing.SingSong s);
 
 }

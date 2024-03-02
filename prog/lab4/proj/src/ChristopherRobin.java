@@ -1,6 +1,6 @@
 package ru.ifmo.se.aidzoh.pooh;
 
-public class ChristopherRobin extends RobinGroup {
+class ChristopherRobin extends Friends {
 
         @Override
         public int hashCode() {
@@ -16,7 +16,7 @@ public class ChristopherRobin extends RobinGroup {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                RobinGroup that = (RobinGroup) o;
+                Friends that = (Friends) o;
 
                 return this.location == that.location;
 
@@ -25,67 +25,58 @@ public class ChristopherRobin extends RobinGroup {
         @Override
         public String toString() {
                 return "ChristopherRobin{"
-                        + "eyeSize=" + this.eyeSize
-                        + ", location" + this.getLocation()
-                        + '}';
+                                 + "eyeSize=" + this.eyeSize
+                                 + ", location" + this.getLocation()
+                                 + '}';
         }
 
 
-        public void listen(StoryType t) {
+        public void listen(StoryType t, Singing.SingSong s) {
+
+                s.currentlyListening = true;
 
                 System.out.print("*Глаза Кристофера Робина становятся ");
 
-                switch (t) {
+                this.eyeSize += t.getValue();
 
-                        case SAD:
-                                this.eyeSize += 10;
-                                System.out.println("больше*");
-                                break;
+                System.out.println( t.getValue() >= 0 ? "больше*" : "меньше*" );
 
-                        case INTERESTING:
-                                this.eyeSize += 5;
-                                System.out.println("больше*");
-                                break;
+        }
 
-                        case BORING:
-                                if (this.eyeSize >= 5) {
-                                        this.eyeSize -= 5;
-                                        System.out.println("меньше*");
-                                }
-                                break;
+        public void run(Location where, Singing.SingSong s) {
 
-                        case FUNNY:
-                                if (this.eyeSize >= 10) {
-                                        this.eyeSize -= 10;
-                                        System.out.println("меньше*");
-                                }
-                                break;
+                s.currentlyRunning = true;
+
+                this.location = where;
+
+                System.out.println("*Кристофер Робин мчится*\n"
+                                + "Текущяя локация Кристофера Робина - " + this.getLocation());
+
+        }
+
+        public void stopRunning(Singing.SingSong s) {
+
+                s.currentlyRunning = false;
+
+        }
+
+        public void stopListening(Singing.SingSong s) {
+
+                s.currentlyListening = false;
+
+        }
+
+        protected void tellStory(StoryType storyType, Singing.SingSong s, Friends... f) {
+
+                System.out.println("*Кристофер Робин рассказывает историю*");
+
+                for (int i = 0; i < f.length; i++) {
+                        
+                        f[i].listen(storyType, s);
 
                 }
 
         }
-
-        public void run(Location where) {
-
-                System.out.print("*Кристофер Робин мчится*");
-
-                this.location = where;
-
-                System.out.println("Текущяя локация Робина - " + this.getLocation());
-
-        }
-
-
-
-        public void tellStory(StoryType storyType, RobinGroup r) {
-
-                System.out.println("*Кристофер Робин рассказывает историю*");
-
-                r.listen(storyType);
-
-        }
-
-        public void sayPhrase() {}
 
         public ChristopherRobin() {}
 
